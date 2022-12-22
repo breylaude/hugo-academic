@@ -181,7 +181,7 @@ sections:
     design:
       columns: '2'
       view: citation
-  - block: collection
+ # - block: collection
     id: talks
     content:
       title: Recent & Upcoming Talks
@@ -202,7 +202,7 @@ sections:
       title: Contact
       subtitle:
       text: |-
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mi diam, venenatis ut magna et, vehicula efficitur enim.
+        For partnerships and project collaborations, never hesitate to contact
       # Contact (add or remove contact options as necessary)
       email: contact@laude.cloud
       appointment_url: 'https://calendly.com'
