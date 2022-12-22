@@ -12,22 +12,6 @@ sections:
       username: admin
       # Override your bio text from `authors/admin/_index.md`?
       text:
-  - block: features
-    content:
-      title: Skills
-      items:
-        - name: Programming
-          description: 50%
-          icon: r-project
-          icon_pack: fab
-        - name: Security Research
-          description: 80%
-          icon: chart-line
-          icon_pack: fas
-        - name: Software Engineering / Design
-          description: 55%
-          icon: camera-retro
-          icon_pack: fas
   - block: experience
     content:
       title: Experience
@@ -48,11 +32,7 @@ sections:
           date_start: '2021-01-01'
           date_end: ''
           description: |2-
-              Responsibilities include:
-
-              * Analyzing
-              * Modelling
-              * Deploying
+              Software connsulting and development company
         - title: Software Engineer
           company: Zerobstacle Technologies
           company_url: 'httpps://zerobstacle.dev/'
