@@ -43,7 +43,7 @@ sections:
         - title: Software Developer, CEO & Founder
           company: Laude Technologies
           company_url: 'https://laudetechnologies.com/'
-          company_logo: org-gc
+          company_logo: org-lt
           location: Philippines
           date_start: '2021-01-01'
           date_end: ''
