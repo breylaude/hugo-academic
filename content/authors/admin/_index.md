@@ -1,6 +1,6 @@
 ---
 title: Ignas Laude
-role: Software Developer
+role: Software Developer, Entrepreneur, Hacker
 avatar_filename: 55919457.jpg
 bio: My research interests include distributed robotics, mobile computing and
   programmable matter.
@@ -41,7 +41,7 @@ status:
 last_name: Laude
 highlight_name: true
 first_name: Ignas
-email: "ilaude@laudetechnologies.com"
+email: ilaude@laudetechnologies.com
 ---
 My work focuses mostly on solving problems from a broad range of systems, with experience in the full software development lifecycle, from frontend to backend code, to developing CI/CD pipelines to increase release cycles and streamline software delivery, to supporting that software in production by managing bare metal Linux servers using Ansible and Docker as well as deploying applications to Kubernetes clusters. I also like to find zero-days on various IoT devices and embedded systems, as well as join competitive programming competitions in my spare time, you can check my[ competitive programming blog](https://14ud3.blogspot.com/) here.
 {style="text-align: justify;"}
