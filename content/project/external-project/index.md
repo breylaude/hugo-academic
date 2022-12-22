@@ -8,5 +8,5 @@ external_link: https://laude.ml/
 image:
   caption: ""
   focal_point: Smart
-  filename: featured.png
+  filename: ""
 ---
