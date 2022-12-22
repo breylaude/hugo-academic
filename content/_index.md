@@ -50,17 +50,17 @@ sections:
           description: |2-
               Responsibilities include:
 
-              * Analysing
+              * Analyzing
               * Modelling
               * Deploying
-        - title: Professor of Semiconductor Physics
-          company: University X
-          company_url: ''
+        - title: Software Engineer
+          company: Zerobstacle Technologies
+          company_url: 'httpps://zerobstacle.dev/'
           company_logo: org-x
-          location: California
-          date_start: '2016-01-01'
-          date_end: '2020-12-31'
-          description: Taught electronic engineering and researched semiconductor physics.
+          location: Philippines
+          date_start: '2021-04-21'
+          date_end: '2022-03-31'
+          description: Building cross-platform mobile applications and web systems for ride-hailing, courier delivery, and other transport-related services.
     design:
       columns: '2'
   - block: accomplishments
@@ -147,7 +147,7 @@ sections:
         - name: All
           tag: '*'
         - name: Software Engineering
-          tag: Design
+          tag: Software Engineering
         - name: Other
           tag: Demo
     design:
@@ -204,8 +204,7 @@ sections:
       text: |-
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mi diam, venenatis ut magna et, vehicula efficitur enim.
       # Contact (add or remove contact options as necessary)
-      email: test@example.org
-      phone: 888 888 88 88
+      email: contact@laude.cloud
       appointment_url: 'https://calendly.com'
       address:
         street: San Miguel
@@ -214,7 +213,7 @@ sections:
         postcode: '5300'
         country: Philippines
         country_code: PH
-      directions: Enter Building 1 and take the stairs to Office 200 on Floor 2
+      directions: Enter Building 1 and take the stairs to Office 3 on Floor 2
       office_hours:
         - 'Monday 10:00 to 13:00'
         - 'Wednesday 09:00 to 10:00'
