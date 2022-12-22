@@ -56,7 +56,7 @@ sections:
         - title: Software Engineer
           company: Zerobstacle Technologies
           company_url: 'httpps://zerobstacle.dev/'
-          company_logo: org-x
+          company_logo: org-zt
           location: Philippines
           date_start: '2021-04-21'
           date_end: '2022-03-31'
