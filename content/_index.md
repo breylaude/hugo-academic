@@ -161,15 +161,15 @@ sections:
       contact_links:
         - icon: twitter
           icon_pack: fab
-          name: DM Me
+          name: DM
           link: 'https://twitter.com/ignaslaude/'
         - icon: skype
           icon_pack: fab
-          name: Skype Me
+          name: Skype
           link: 'skype:echo123?call'
         - icon: video
           icon_pack: fas
-          name: Zoom Me
+          name: Zoom
           link: 'https://zoom.com'
       # Automatically link email and phone or display as text?
       autolink: true
