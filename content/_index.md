@@ -146,8 +146,8 @@ sections:
       buttons:
         - name: All
           tag: '*'
-        - name: Software Engineering
-          tag: Software Engineering
+        - name: Software
+          tag: Software
         - name: Other
           tag: Demo
     design:
