@@ -6,6 +6,8 @@ subtitle: I implemented several features including a web hook that handles
 date: 2022-12-22T19:38:07.134Z
 draft: false
 featured: false
+tags:
+  - App
 categories:
   - App
 external_link: https://backridepalawan.com/
