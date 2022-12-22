@@ -1,5 +1,5 @@
 ---
-title: View all my projects
+title: View all projects
 date: 2016-04-27T00:00:00.000Z
 summary: ""
 tags:
