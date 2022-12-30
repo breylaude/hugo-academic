@@ -2,8 +2,8 @@
 title: Ignas Laude
 role: Software Developer
 avatar_filename: 55919457.jpg
-bio: My research interests include distributed robotics, mobile computing and
-  programmable matter.
+bio: My research interests include software engineering, quantum computing and
+  robotics
 interests:
   - Software Architecture/Design
   - Algorithms
