@@ -1,77 +1,77 @@
 ---
-title: Display Jupyter Notebooks with Academic
-subtitle: Learn how to blog in Academic using Jupyter notebooks
-summary: Learn how to blog in Academic using Jupyter notebooks
+summary: This is another subject that is very complicated to explain, but is
+  crucial to understand for writing efficient code, especially on embedded
+  systems and integrated GPUs. I figure to write it down as a reminder. This
+  post mostly references Intel's article on minimizing memory copy\[1] and AMD's
+  ROCm OpenCL optimization guide\[2].
 authors:
   - admin
-tags: []
+lastMod: 2019-09-05T00:00:00Z
+title: Zero Copy OpenCL Buffers
+subtitle: ""
+date: 2022-09-28T00:00:00.000Z
+tags:
+  - GPU
+  - OpenCL
 categories: []
 projects: []
-date: '2019-02-05T00:00:00Z'
-lastMod: '2019-09-05T00:00:00Z'
 image:
-  caption: ''
-  focal_point: ''
+  caption: ""
+  focal_point: ""
 ---
+This is another subject that is very complicated to explain, but is crucial to understand for writing efficient code, especially on embedded systems and integrated GPUs. I figure to write it down as a reminder. This post mostly references Intel's article on minimizing memory copy\[1] and AMD's ROCm OpenCL optimization guide\[2].
 
-```python
-from IPython.core.display import Image
-Image('https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png')
+[\[1]: Getting the Most from OpenCL™ 1.2: How to Increase Performance by Minimizing Buffer Copies on Intel® Processor Graphics](https://www.intel.com/content/www/us/en/developer/articles/training/getting-the-most-from-opencl-12-how-to-increase-performance-by-minimizing-buffer-copies-on-intel-processor-graphics.html)
+
+[\[2]: ROCm documentation: OpenCL Optimization](https://rocmdocs.amd.com/en/latest/Programming_Guides/Opencl-optimization.html#pre-pinned-buffers)
+
+When we first learn OpenCL, we learn that we allocate buffers using the clCreateBuffer function. Normally the function call looks like this `clCreateBuffer(ctx`, `CL_MEM_READ_WRITE`, some_size, NULL, NULL). The `CL_MEM_READ_WRITE` flag tells the underlying OpenCL runtime that the GPU want to be able to read and write to said buffer. Occasionally, a read or write only buffer is useful. And the runtime can optimize memory access base on that. Anyway, notice there's more flags avaliable in the doc\[3]. Namely `CL_MEM_USE_HOST_PTR, CL_MEM_ALLOC_HOST_PTR` and `CL_MEM_COPY_HOST_PTR`.
+
+`khronos.org: clCreateBuffer`
+
+These flags comes with cryptic descriptions in the documentation. In English, they control where the OpenCL buffer is located. By default the buffer lives on the VRAM. Thus the following code likely causes a DMA transfer from the host to the GPU, which can be slow at times as it involve system operations to allocate page-aligned memory then a DMA request. malloc() is hated because how slow it is even though it cached. A DMA is worse that there's no way to cache it. According to AMD's document. The buffer read/write calls can only provide about 2/3 of peak performance.
+
+```c
+cl_mem buffer = clCreateBuffer(ctx, CL_MEM_READ_WRITE, some_size, NULL, NULL);
+// This can be slow!! Context switch is slow!
+clEnqueueWriteBuffer(queue, buffer, CL_FALSE, 0, some_size, some_data, 0, NULL, NULL);
 ```
 
-![png](./index_1_0.png)
+`CL_MEM_COPY_HOST_PTR` copies data to device at buffer creation. `CL_MEM_USE_HOST_PTR` might be `CL_MEM_ALLOC_HOST_PTR` but with user supplied memory. It's implementation dependent. Both are quite useless in my opinion. `CL_MEM_ALLOC_HOST_PTR` is much more interesting.
 
-```python
-print("Welcome to Academic!")
+## [](https://github.com/ignaslaude/starter-hugo-academic/blob/main/content/post/zero-copy-opencl-buffers/index.md#optimizing-opencl-data-transfer-on-integrated-gpus)Optimizing OpenCL data transfer on integrated GPUs
+
+`CL_MEM_ALLOC_HOST_PTR` asks OpenCL to allocate the buffer on the host memory instead on VRAM. On mobile devices and integrated GPUs, since the GPU shares the host memory. Can't we just allocate the host memory and map it into GPU? Yes! That's an optimization most vendors support. On an eligible device, again read your vendor's documentation for details, runtimes often map host memory into the GPU upon kernel execution.
+
+```c
+cl_mem buffer = clCreateBuffer(ctx, CL_MEM_WRITE_ONLY | CL_MEM_ALLOC_HOST_PTR, some_size, NULL, NULL);
+// This is low latency because buffer lives on the host memory
+void* mapped = clEnqueueMapBuffer(queue, buffer, CL_TRUE, CL_MAP_WRITE, 0, some_size, 0, NULL, NULL, &err);
+memcpy(mapped, some_data, some_size);
+// Low latency because buffer is on the host memory
+clEnqueueUnmapMemObject(queue, buffer, mapped, 0, NULL, NULL);
+// Now OpenCL maps the host memory into the GPU. One system op for 2 operations.
+clEnqueueNDRangeKernel(queue, kernel, ...);
 ```
 
-    Welcome to Academic!
+This is faster because of 2 reasons, 1. The buffer now lives on somewhere the CPU can access. Thus mapping is basically free. And 2, OpenCL maps the CPU memory to GPU during kernel execution (an async operation). We can hide that latency unlike in plane buffer copy. In practice I've seen a streaming heavy application use 25% less CPU (dropping from 200% to 150% overall) by just changing the allocation flags and use mapping.
 
-## Install Python and JupyterLab
+**Important:** Having the data located on main DRAM does not mean the CPU can access it. Usually there's a hardware configured split for GPU and GPU memory. It's likely the driver can map GPU memory into the CPU address space via the interconnect (vise versa). But direct access is not guaranteed. That's why we need to tell OpenCL to make the buffer live on CPU memory and share it.
 
-[Install Anaconda](https://www.anaconda.com/distribution/#download-section) which includes Python 3 and JupyterLab.
+### [](https://github.com/ignaslaude/starter-hugo-academic/blob/main/content/post/zero-copy-opencl-buffers/index.md#behavior-on-discrete-gpus-and-accelerators)Behavior on discrete GPUs and accelerators
 
-Alternatively, install JupyterLab with `pip3 install jupyterlab`.
+The above benefit only works on integrated GPUs (or integrated DSP/FPGA). On discrete devices, where the device does not share the host memory, the above is likely not an optimization. As now we force the discrete GPU to DMA during kernel execution. Which is at least an order of magnitude slower compared to VRAM.
 
-## Create or upload a Jupyter notebook
+### [](https://github.com/ignaslaude/starter-hugo-academic/blob/main/content/post/zero-copy-opencl-buffers/index.md#faqs)FAQs
 
-Run the following commands in your Terminal, substituting `<MY-WEBSITE-FOLDER>` and `<SHORT-POST-TITLE>` with the file path to your Academic website folder and a short title for your blog post (use hyphens instead of spaces), respectively:
+* Does the reverse happen? Allocate VRAM and map it into host memory?
 
-```bash
-mkdir -p <MY-WEBSITE-FOLDER>/content/post/<SHORT-POST-TITLE>/
-cd <MY-WEBSITE-FOLDER>/content/post/<SHORT-POST-TITLE>/
-jupyter lab index.ipynb
-```
+No, I haven't seen it in the wild. Most likely because even on integrated GPUs, there are still dedicated chunks of memory for the GPU (split configured by BIOS/UEFI). If you take a look at Windows task manager, it has a shared and dedicated memory section for the GPU. The shared region is usually half of available memory for the system, and is used if `CL_MEM_ALLOC_HOST_PTR` is applied, otherwise the dedicated reagon.
 
-The `jupyter` command above will launch the JupyterLab editor, allowing us to add Academic metadata and write the content.
+* Is there an API to check if zero copy is enabled?
 
-## Edit your post metadata
+No. This is an optimization that vendors and developers can take advantage of. But it's not a requirement. Nor a part of the OpenCL standard. It has to be measured by testing the performance.
 
-The first cell of your Jupter notebook will contain your post metadata ([front matter](https://sourcethemes.com/academic/docs/front-matter/)).
+* Can we check if the GPU shares the host memory?
 
-In Jupter, choose _Markdown_ as the type of the first cell and wrap your Academic metadata in three dashes, indicating that it is YAML front matter:
-
-```
----
-title: My post's title
-date: 2019-09-01
-
-# Put any other Academic metadata here...
----
-```
-
-Edit the metadata of your post, using the [documentation](https://sourcethemes.com/academic/docs/managing-content) as a guide to the available options.
-
-To set a [featured image](https://sourcethemes.com/academic/docs/managing-content/#featured-image), place an image named `featured` into your post's folder.
-
-For other tips, such as using math, see the guide on [writing content with Academic](https://wowchemy.com/docs/content/writing-markdown-latex/).
-
-## Convert notebook to Markdown
-
-```bash
-jupyter nbconvert index.ipynb --to markdown --NbConvertApp.output_files_dir=.
-```
-
-## Example
-
-This post was created with Jupyter. The orginal files can be found at https://github.com/gcushen/hugo-academic/tree/master/exampleSite/content/post/jupyter
+Yes. `CL_DEVICE_HOST_UNIFIED_MEMORY` returns `CL_TRUE` if the device shares the host memory. Again, it's not a guarantee that zero copy is enabled. It's just a hint.
