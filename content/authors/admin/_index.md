@@ -1,6 +1,6 @@
 ---
 title: Ignas Laude
-role: Software Developer | Entrepreneur
+role: Software Developer
 avatar_filename: 55919457.jpg
 bio: My research interests include distributed robotics, mobile computing and
   programmable matter.
