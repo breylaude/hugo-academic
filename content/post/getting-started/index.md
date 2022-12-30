@@ -8,10 +8,10 @@ draft: false
 featured: false
 authors:
   - admin
-lastmod: 2020-12-13T00:00:00Z
-tags: []
-categories:
+lastmod: 2020-12-13T00:00:00.000Z
+tags:
   - Programming
+categories: []
 projects: []
 image:
   caption: ""
