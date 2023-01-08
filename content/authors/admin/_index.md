@@ -1,6 +1,6 @@
 ---
 title: Ignas Laude
-role: Software Engineer
+role: App Entrepreneur, 10+ Apps, Tech Startup Builder, Ethical Hacker
 avatar_filename: 55919457.jpg
 bio: My research interests include software engineering, quantum computing and
   robotics
