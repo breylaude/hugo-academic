@@ -1,6 +1,7 @@
 ---
 title: Ignas Laude
-role: App Entrepreneur, 10+ Apps, Tech Startup Builder, Ethical Hacker
+role: App Entrepreneur, 10+ Apps, Tech Startup Builder, Ethical Hacker,
+  companies include Laude Technologies, WiseNet Cyber Defense
 avatar_filename: 55919457.jpg
 bio: My research interests include software engineering, quantum computing and
   robotics
@@ -30,9 +31,7 @@ social:
   - icon: cv
     icon_pack: ai
     link: uploads/resume.pdf
-organizations:
-  - name: Laude Technologies
-    url: https://www.laudetechnologies.com/
+organizations: []
 education:
   courses: []
 superuser: true
