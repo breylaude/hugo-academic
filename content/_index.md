@@ -18,15 +18,15 @@ sections:
       items:
         - name: Programming
           description: 50%
-          icon: r-project
+          icon:
           icon_pack: fab
         - name: Security Research
           description: 80%
-          icon: chart-line
+          icon: 
           icon_pack: fas
         - name: Software Engineering / Design
           description: 55%
-          icon: camera-retro
+          icon:
           icon_pack: fas
   - block: experience
     content:
@@ -43,24 +43,19 @@ sections:
         - title: Software Developer, CEO & Founder
           company: Laude Technologies
           company_url: 'https://laudetechnologies.com/'
-          company_logo: org-lt
+          company_logo: 
           location: Philippines
           date_start: '2021-01-01'
           date_end: ''
-          description: |2-
-              Responsibilities include:
-
-              * Analyzing
-              * Modelling
-              * Deploying
-        - title: Software Engineer
+          description: 
+        - title: Programmer
           company: Zerobstacle Technologies
           company_url: 'httpps://zerobstacle.dev/'
-          company_logo: org-zt
+          company_logo: 
           location: Philippines
           date_start: '2021-04-21'
           date_end: '2022-03-31'
-          description: Building cross-platform mobile applications and web systems for ride-hailing, courier delivery, and other transport-related services.
+          description: Building cross-platform mobile applications and web systems for ride-hailing, courier delivery, and other transport-related services. 
     design:
       columns: '2'
   - block: accomplishments
@@ -76,13 +71,13 @@ sections:
       #   Leave other parameters empty if not required.
       #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
       items:
-        - certificate_url: https://www.coursera.org
+        - certificate_url: https://www.eccouncil.org/programs/certified-ethical-hacker-ceh/
           date_end: ''
           date_start: '2021-01-25'
           description: ''
-          organization: Coursera
-          organization_url: https://www.coursera.org
-          title: Neural Networks and Deep Learning
+          organization: EC-Council
+          organization_url: https://www.eccouncil.org/
+          title: Certified Ethical Hacker
           url: ''
         - certificate_url: https://www.edx.org
           date_end: ''
