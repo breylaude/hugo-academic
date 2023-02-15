@@ -215,7 +215,7 @@ sections:
       contact_links:
         - icon: twitter
           icon_pack: fab
-          name: DM Me
+          name: DM
           link: 'https://twitter.com/ignaslaude/'
         - icon: skype
           icon_pack: fab
