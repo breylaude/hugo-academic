@@ -79,22 +79,14 @@ sections:
           organization_url: https://www.eccouncil.org/
           title: Certified Ethical Hacker
           url: ''
-        - certificate_url: https://www.edx.org
+        - certificate_url: https://www.coursera.org
           date_end: ''
-          date_start: '2021-01-01'
-          description: Formulated informed blockchain models, hypotheses, and use cases.
-          organization: edX
-          organization_url: https://www.edx.org
-          title: Blockchain Fundamentals
-          url: https://www.edx.org/professional-certificate/uc-berkeleyx-blockchain-fundamentals
-        - certificate_url: https://www.datacamp.com
-          date_end: '2020-12-21'
-          date_start: '2020-07-01'
+          date_start: '2022-02-18'
           description: ''
-          organization: DataCamp
-          organization_url: https://www.datacamp.com
-          title: 'Object-Oriented Programming in R'
-          url: ''
+          organization: Coursera
+          organization_url: https://www.edx.org
+          title: Meta Back-End Professional Developer
+          url: https://www.coursera.org/professional-certificates/meta-back-end-developer
     design:
       columns: '2'
   - block: collection
@@ -176,7 +168,7 @@ sections:
     design:
       columns: '2'
       view: citation
- # - block: collection
+  - block: collection
     id: talks
     content:
       title: Recent & Upcoming Talks
@@ -197,7 +189,7 @@ sections:
       title: Contact
       subtitle:
       text: |-
-        For partnerships and project collaborations, never hesitate to contact
+        For partnerships and project collaborations, never hesitate to contact:
       # Contact (add or remove contact options as necessary)
       email: contact@laude.cloud
       appointment_url: 'https://calendly.com'
