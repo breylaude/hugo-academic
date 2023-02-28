@@ -1,8 +1,7 @@
 ---
 title: Ignas Laude
-role: Internet Entrepreneur, Tech Startup Builder, Ethical Hacker, companies
-  include Laude Technologies, WiseSec Cyber Security Solutions
-avatar_filename: avatar.jpg
+role: Software Developer
+avatar_filename: avatar.png
 bio: My research interests include software engineering, quantum computing and
   robotics
 interests:
