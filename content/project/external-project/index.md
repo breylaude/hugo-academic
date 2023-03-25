@@ -1,12 +1,15 @@
 ---
-title: View all projects & contributions
+title: Backride Palawan
 date: 2016-04-27T00:00:00.000Z
-summary: ""
+summary: First ever Single Motorcycle \*Backride\* Transport/Delivery Service in
+  Palawan. I implemented several features including a web hook that handles
+  different endpoints which integrates existing systems for data collection and
+  offer personalization based on geolocation.
 tags:
-  - Demo
-external_link: https://laudz.pages.dev/
+  - Ride Sharing App
+external_link: https://bacridepalawan.com/
 image:
   caption: ""
   focal_point: Smart
-  filename: ""
+  filename: featured.jpg
 ---
