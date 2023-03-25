@@ -39,7 +39,7 @@ sections:
         - name: Python
           description:
           icon:
-          icon_pack:fab
+          icon_pack: fab
         - name: PHP
           description:
           icon:
