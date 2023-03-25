@@ -28,67 +28,6 @@ sections:
           description: 55%
           icon:
           icon_pack: fas
-  - block: experience
-    content:
-      title: Experience
-      # Date format for experience
-      #   Refer to https://wowchemy.com/docs/customization/#date-format
-      date_format: Jan 2006
-      # Experiences.
-      #   Add/remove as many `experience` items below as you like.
-      #   Required fields are `title`, `company`, and `date_start`.
-      #   Leave `date_end` empty if it's your current employer.
-      #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
-      items:
-        - title: Software Developer, CEO & Founder
-          company: Laude Technologies
-          company_url: 'https://laudetechnologies.com/'
-          company_logo: 
-          location: Philippines
-          date_start: '2021-01-01'
-          date_end: ''
-          description: 
-        - title: Programmer
-          company: Zerobstacle Technologies
-          company_url: 'httpps://zerobstacle.dev/'
-          company_logo: 
-          location: Philippines
-          date_start: '2021-04-21'
-          date_end: '2022-03-31'
-          description: Building cross-platform mobile applications and web systems for ride-hailing, courier delivery, and other transport-related services. 
-    design:
-      columns: '2'
-  - block: accomplishments
-    content:
-      # Note: `&shy;` is used to add a 'soft' hyphen in a long heading.
-      title: 'Accomplish&shy;ments'
-      subtitle:
-      # Date format: https://wowchemy.com/docs/customization/#date-format
-      date_format: Jan 2006
-      # Accomplishments.
-      #   Add/remove as many `item` blocks below as you like.
-      #   `title`, `organization`, and `date_start` are the required parameters.
-      #   Leave other parameters empty if not required.
-      #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
-      items:
-        - certificate_url: https://www.eccouncil.org/programs/certified-ethical-hacker-ceh/
-          date_end: ''
-          date_start: '2021-01-25'
-          description: ''
-          organization: EC-Council
-          organization_url: https://www.eccouncil.org/
-          title: Certified Ethical Hacker
-          url: ''
-        - certificate_url: https://www.coursera.org
-          date_end: ''
-          date_start: '2022-02-18'
-          description: ''
-          organization: Coursera
-          organization_url: https://www.edx.org
-          title: Meta Back-End Professional Developer
-          url: https://www.coursera.org/professional-certificates/meta-back-end-developer
-    design:
-      columns: '2'
   - block: collection
     id: posts
     content:
@@ -194,7 +133,7 @@ sections:
       email: contact@laude.cloud
       appointment_url: 'https://calendly.com'
       address:
-        street: San Miguel
+        street: Camella Manors Verdant, Jacana Rd.
         city: Puerto Princesa 
         region: Palawan
         postcode: '5300'
@@ -226,7 +165,7 @@ sections:
           id:
         netlify:
           # Enable CAPTCHA challenge to reduce spam?
-          captcha: false
+          captcha: true
     design:
       columns: '2'
 ---
