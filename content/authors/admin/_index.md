@@ -1,7 +1,7 @@
 ---
 title: Ignas Laude
 role: Software Developer
-avatar_filename: avatar.png
+avatar_filename: avatar.jpg
 bio: My research interests include software engineering, quantum computing and
   robotics
 interests:
