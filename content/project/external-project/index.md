@@ -7,9 +7,9 @@ summary: First ever Single Motorcycle \*Backride\* Transport/Delivery Service 
   offer personalization based on geolocation.
 tags:
   - Ride Sharing App
-external_link: https://bacridepalawan.com/
+external_link: https://backridepalawan.com/
 image:
   caption: ""
   focal_point: Smart
-  filename: featured.jpg
+  filename: ""
 ---
