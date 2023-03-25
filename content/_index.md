@@ -14,18 +14,18 @@ sections:
       text:
   - block: features
     content:
-      title: Skills
+      title: Stats
       items:
         - name: Programming
-          description: 50%
+          description: 90%
           icon:
           icon_pack: fab
-        - name: Security Research
+        - name: Problem-Solving
           description: 80%
           icon: 
           icon_pack: fas
-        - name: Software Engineering / Design
-          description: 55%
+        - name: Software Engineering / Software Architecture/Design
+          description: 90%
           icon:
           icon_pack: fas
   - block: collection
