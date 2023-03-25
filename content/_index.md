@@ -28,6 +28,26 @@ sections:
           description: 90%
           icon:
           icon_pack: fas
+  - block: features
+    content:
+      title: Most Used Languages
+      items:
+        - name: C++
+          description:
+          icon:
+          icon_pack: fas
+        - name: Python
+          description:
+          icon:
+          icon_pack:fab
+        - name: PHP
+          description:
+          icon:
+          icon_pack: fab
+        - name: C
+          description:
+          icon:
+          icon_pack: fas
   - block: collection
     id: posts
     content:
