@@ -150,10 +150,10 @@ sections:
       text: |-
         For partnerships and project collaborations, never hesitate to contact:
       # Contact (add or remove contact options as necessary)
-      email: contact@laude.cloud
-      appointment_url: 'https://calendly.com'
+      email: laude822@gmail.com
+      appointment_url: 'https://calendly.com/ignaslaude/30min'
       address:
-        street: Camella Manors Verdant, Jacana Rd.
+        street: 
         city: Puerto Princesa 
         region: Palawan
         postcode: '5300'
@@ -171,7 +171,7 @@ sections:
         - icon: skype
           icon_pack: fab
           name: Skype
-          link: 'skype:echo123?call'
+          link: 'https://join.skype.com/invite/w1VqkQlJf60D'
         - icon: video
           icon_pack: fas
           name: Zoom
