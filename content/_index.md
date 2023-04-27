@@ -20,7 +20,7 @@ sections:
           description: 90%
           icon:
           icon_pack: fab
-        - name: Problem-Solving
+        - name: Infosec Research
           description: 80%
           icon: 
           icon_pack: fas
